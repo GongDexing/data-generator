@@ -1,0 +1,6 @@
+insert into test (author,sn,oct,name) values('gongdexing','123456','123456_9b3c5746b6','李四')
+insert into test (author,sn,oct,name) values('gongdexing','123456','123456_7b96bd0ec2','王八')
+insert into test (author,sn,oct,name) values('gongdexing','123456','123456_6fdfbd24bb','张三')
+insert into test (author,sn,oct,name) values('gongdexing','123456','123456_05a3736d1e','张三')
+insert into test (author,sn,oct,name) values('gongdexing','123456','123456_18d2e276e2','王八')
+insert into test (author,sn,oct,name) values('gongdexing','123456','123456_f8c158c28a','王五')

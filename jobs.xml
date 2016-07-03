@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <jobs>
+        <job>
+            <id>1</id>
+            <num>3</num>
+            <table>test</table>
+            <filename>test.sql</filename>
+            <detail>
+                <author>$var{author}</author>
+                <sn>123456</sn>
+                <oct>$var{sn}_$rule{hex,10}</oct>
+				<name>$pool{name}</name>
+            </detail>
+        </job>                    
+    </jobs>
+</root>
