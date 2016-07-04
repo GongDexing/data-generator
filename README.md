@@ -85,7 +85,7 @@ rule.hex=0123456789abcdef
   005
 ```
 
-将 **jobs.xml** 修改如何如何
+将 **jobs.xml** 修如下
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
