@@ -69,6 +69,7 @@ rule.hex=0123456789abcdef
 
 ### _$pool{name}_ 用法
 **_$pool{name}_** 用法和 **_$var{variable}_** 类似，但是 **_$pool{name}_** 还有一种更加高级的用法，比如每次要从上百个证件号码中随机取一个，如果在 **config.properties** 中定义，会显得非常臃肿，这时可以在 **pool** 目录中添加一个 **ids.csv** 文件
+
 > ids.csv
 ```
   001
@@ -77,6 +78,7 @@ rule.hex=0123456789abcdef
   004
   005
 ```
+
 将 **jobs.xml** 修改如何如何
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -100,6 +102,7 @@ rule.hex=0123456789abcdef
 </root>
 ```
 再次运行
+
 > java -jar DataGenerator-0.0.1-SNAPSHOT.jar
 ```sql
 insert into test (author,sex,name,hex,id,sn) values('gongdexing','女','张三','123456_bc5f720d09','002','123456')
