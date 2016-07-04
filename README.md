@@ -97,12 +97,12 @@ rule.hex=0123456789abcdef
             <table>test</table>
             <filename></filename>
             <detail>
-				        <id>$pool{ids.csv}</id>
+                <id>$pool{ids.csv}</id>
                 <author>$var{author}</author>
                 <sn>123456</sn>
                 <hex>$var{sn}_$rule{hex,10}</hex>
-				        <name>$pool{name}</name>
-				        <sex>$pool{sex}</sex>
+                <name>$pool{name}</name>
+                <sex>$pool{sex}</sex>
             </detail>
         </job>                    
     </jobs>
