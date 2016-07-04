@@ -9,7 +9,7 @@
             <detail>
                 <author>$var{author}</author>
                 <sn>123456</sn>
-                <oct>$var{sn}_$rule{hex,10}</oct>
+                <hex>$var{sn}_$rule{hex,10}</hex>
 				<name>$pool{name}</name>
             </detail>
         </job>
