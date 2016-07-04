@@ -1,5 +1,7 @@
 # DataGenerator
 ## 编译和运行
+  基于java开发的，强大并且灵活的数据产生神器
+
 > mvn package
 
 >cp jobs.xml ./target/jobs.xml
@@ -15,12 +17,13 @@
 ## 查看结果
 > cat output/test.sql
 ```sql
-insert into test (hex,author,name,sn) values('123456_da99aa0efb','gongdexing','王五','123456')
-insert into test (hex,author,name,sn) values('123456_4801bc3556','gongdexing','王五','123456')
-insert into test (hex,author,name,sn) values('123456_fdf9e2100e','gongdexing','王八','123456')
+insert into test (hex,author,name,sn) values('123456_da99aa0efb','gdx','王五','123456')
+insert into test (hex,author,name,sn) values('123456_4801bc3556','gdx','王五','123456')
+insert into test (hex,author,name,sn) values('123456_fdf9e2100e','gdx','王八','123456')
 ```
 
 ## 基本使用
+
 > cat jobs.xml
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -41,12 +44,14 @@ insert into test (hex,author,name,sn) values('123456_fdf9e2100e','gongdexing','�
     </jobs>
 </root>
 ```
+
 ### _$var{variable}_ 用法
 在上面的 **jobs.xml** 中 **_$var{author}_** 代表引用 **author** 这个变量，在jar中config.properties中进行了配置
+
 > cat config.properties
 ```properties
 #内置变量
-var.author=gongdexing
+var.author=gdx
 #内置类型
 rule.bin=01
 rule.oct=01234567
@@ -58,7 +63,8 @@ rule.string=0123456789abcdefghijklmnopqrstuvwxyz
 pool.name=张三,李四,王五,王八
 pool.sex=男,女
 ```
-可以看到 **var.author** 被设置为 **gongdexing** ，但是 **_$var{sn}_** 并没有在config.properties中被定义，这时 **_$var{sn}_** 指的是jobs.xml中的 ```<sn>123456</sn>``` 标签，即为 **123456**
+
+可以看到 **var.author** 被设置为 **gdx** ，但是 **_$var{sn}_** 并没有在config.properties中被定义，这时 **_$var{sn}_** 指的是jobs.xml中的 ```<sn>123456</sn>``` 标签，即为 **123456**
 
 ### _$rule{type,len}_ 用法
 **_$rule{type,len}_** 中间是没有任何空格的，在jobs.xml中 **_$rule{hex,10}_** 代表从 **hex** 类型的数据中随机取出10个，而 **hex** 在 **config.properties** 中进行了定义
@@ -80,6 +86,7 @@ rule.hex=0123456789abcdef
 ```
 
 将 **jobs.xml** 修改如何如何
+
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <root>
@@ -105,7 +112,7 @@ rule.hex=0123456789abcdef
 
 > java -jar DataGenerator-0.0.1-SNAPSHOT.jar
 ```sql
-insert into test (author,sex,name,hex,id,sn) values('gongdexing','女','张三','123456_bc5f720d09','002','123456')
-insert into test (author,sex,name,hex,id,sn) values('gongdexing','女','李四','123456_461fd2fbdd','005','123456')
-insert into test (author,sex,name,hex,id,sn) values('gongdexing','男','王八','123456_f800f13a6f','001','123456')
+insert into test (author,sex,name,hex,id,sn) values('gdx','女','张三','123456_bc5f720d09','002','123456')
+insert into test (author,sex,name,hex,id,sn) values('gdx','女','李四','123456_461fd2fbdd','005','123456')
+insert into test (author,sex,name,hex,id,sn) values('gdx','男','王八','123456_f800f13a6f','001','123456')
 ```

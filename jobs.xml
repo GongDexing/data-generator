@@ -12,6 +12,6 @@
                 <oct>$var{sn}_$rule{hex,10}</oct>
 				<name>$pool{name}</name>
             </detail>
-        </job>                    
+        </job>
     </jobs>
 </root>
