@@ -1,6 +1,6 @@
 # DataGenerator
-## 编译和运行
   基于java开发的，强大并且灵活的数据产生神器
+## 编译和运行
 
 > mvn package
 
