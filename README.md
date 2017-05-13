@@ -17,9 +17,9 @@
 ## 查看结果
 > cat output/test.sql
 ```sql
-insert into test (hex,author,name,sn) values('123456_da99aa0efb','gdx','王五','123456')
-insert into test (hex,author,name,sn) values('123456_4801bc3556','gdx','王五','123456')
-insert into test (hex,author,name,sn) values('123456_fdf9e2100e','gdx','王八','123456')
+insert into test (date,author,name,hex,sn) values('2017-02-18','gdx','王五','123456_ae5b92f3c4','123456')
+insert into test (date,author,name,hex,sn) values('2017-03-01','gdx','王五','123456_4ec13244c3','123456')
+insert into test (date,author,name,hex,sn) values('2017-05-08','gdx','李四','123456_43e192a46f','123456')
 ```
 
 ## 基本使用
@@ -38,12 +38,15 @@ insert into test (hex,author,name,sn) values('123456_fdf9e2100e','gdx','王八',
                 <author>$var{author}</author>
                 <sn>123456</sn>
                 <hex>$var{sn}_$rule{hex,10}</hex>
-                <name>$pool{name}</name>
+				<name>$pool{name}</name>
+				<date>$date{2017-02-01,now,yyyy-MM-dd}</date>
             </detail>
         </job>
     </jobs>
 </root>
 ```
+### _$date{startDate,endDate,format}_ 用法
+表示按照format格式产生日期，并且日期在 __[startDate, endDate]__ 范围内，__startDate__ 和 __endDate__ 顺序可以颠倒，now表示当前日期
 
 ### _$var{variable}_ 用法
 在上面的 **jobs.xml** 中 **_$var{author}_** 代表引用 **author** 这个变量，在jar中config.properties中进行了配置
