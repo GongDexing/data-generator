@@ -38,8 +38,8 @@ insert into test (date,author,name,hex,sn) values('2017-05-08','gdx','李四','1
                 <author>$var{author}</author>
                 <sn>123456</sn>
                 <hex>$var{sn}_$rule{hex,10}</hex>
-				<name>$pool{name}</name>
-				<date>$date{2017-02-01,now,yyyy-MM-dd}</date>
+		<name>$pool{name}</name>
+		<date>$date{2017-02-01,now,yyyy-MM-dd}</date>
             </detail>
         </job>
     </jobs>
