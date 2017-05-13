@@ -113,8 +113,9 @@ public class Parser {
             LocalDate endDate = m.group(2).trim().equals("now") ? LocalDate.now()
                     : LocalDate.parse(m.group(2).trim());
             int length = (int) startDate.until(endDate, ChronoUnit.DAYS);
-            value = value.replace(m.group(),
-                    startDate.plusDays(rand.nextInt(length + 1)).format(formatter));
+            LocalDate randDate = length > 0 ? startDate.plusDays(rand.nextInt(length + 1))
+                    : startDate.minusDays(rand.nextInt(1 - length));
+            value = value.replace(m.group(), randDate.format(formatter));
         }
         return this;
     }
